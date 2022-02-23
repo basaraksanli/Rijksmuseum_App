@@ -1,4 +1,4 @@
-import 'package:rijksmuseum_app/core/params/ThumbnailImageRequestParams.dart';
+import 'package:rijksmuseum_app/core/params/ArtObjectRequestParams.dart';
 
 import '../../../core/resources/DataState.dart';
 import '../../../core/use_case/usecase.dart';

@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:logger/logger.dart';
 import 'package:rijksmuseum_app/core/config/pref_manager.dart';
 import 'package:rijksmuseum_app/core/params/CollectionRequestParams.dart';
-import 'package:rijksmuseum_app/core/params/ThumbnailImageRequestParams.dart';
+import 'package:rijksmuseum_app/core/params/ArtObjectRequestParams.dart';
 import 'package:rijksmuseum_app/core/resources/DataState.dart';
 import 'package:rijksmuseum_app/feature_art_list/domain/model/ArtObject.dart';
 import 'package:rijksmuseum_app/feature_art_list/domain/use_case/ArtUseCases.dart';
