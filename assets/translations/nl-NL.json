@@ -1,0 +1,17 @@
+{
+  "app_title": "RijksMuseum App",
+  "english": "Engels",
+  "dutch": "Nederlands",
+
+  "artist": "Artiest",
+  "production_location": "Productielocatie",
+
+  "details": "Detail",
+  "creator": "Schepper",
+
+  "no_location_indicated": "Er is geen locatie aangegeven",
+
+  "description" : "Beschrijving",
+
+  "no_description_available": "Geen beschrijving beschikbaar"
+}

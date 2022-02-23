@@ -1,0 +1,16 @@
+{
+  "app_title": "RijksMuseum App",
+  "english": "English",
+  "dutch": "Dutch",
+
+  "artist": "Artist",
+  "production_location" : "Production Location",
+
+  "details": "Details",
+  "creator": "Creator",
+
+  "no_location_indicated": "No location is indicated",
+
+  "description" : "Description",
+  "no_description_available" : "No Description available"
+}
