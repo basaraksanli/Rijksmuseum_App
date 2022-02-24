@@ -53,7 +53,7 @@ class ArtObjectDetailDto {
         objectNumber: json["objectNumber"],
         language: json["language"],
         title: json["title"],
-        webImage: WebImageDto.fromJson(json["webImage"]),
+        webImage: json["webImage"] != null ? WebImageDto.fromJson(json["webImage"]): null,
         titles: json["titles"] != null
             ? List<String>.from(json["titles"].map((x) => x))
             : [],
@@ -76,7 +76,7 @@ class ArtObjectDetailDto {
         subTitle: json["subTitle"],
         scLabelLine: json["scLabelLine"],
         location: json["location"],
-        label: LabelDto.fromJson(json["label"]),
+        label: json["label"] != null ? LabelDto.fromJson(json["label"]) : null,
       );
 
   Map<String, dynamic> toJson() => {

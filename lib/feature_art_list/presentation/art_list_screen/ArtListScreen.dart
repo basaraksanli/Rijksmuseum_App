@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:rijksmuseum_app/core/presentation/BasePage.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/use_case/ArtUseCases.dart';
 import 'package:rijksmuseum_app/feature_art_list/presentation/art_list_screen/bloc/art_list_screen_bloc.dart';
 import 'package:rijksmuseum_app/feature_art_list/presentation/art_list_screen/widgets/art_list_item.dart';
 
@@ -16,18 +16,18 @@ class ArtListScreen extends BasePage {
 
 class _ArtListScreenState extends BasePageState<ArtListScreen> {
   late ArtListScreenBloc _artListScreenBloc;
-  late ArtUseCases _artUseCases;
   late final ScrollController _scrollController;
+  late RefreshController _refreshController;
 
   @override
   void didChangeDependencies() {
-    _artUseCases = locator.get<ArtUseCases>();
-    _artListScreenBloc = ArtListScreenBloc(_artUseCases);
+    _artListScreenBloc = ArtListScreenBloc(locator());
     super.didChangeDependencies();
   }
 
   @override
   void initState() {
+    _refreshController = RefreshController(initialRefresh: false);
     _scrollController = ScrollController()..addListener(_scrollListener);
     super.initState();
   }
@@ -42,7 +42,8 @@ class _ArtListScreenState extends BasePageState<ArtListScreen> {
   void _scrollListener() {
     if (_scrollController.position.pixels >
             _scrollController.position.maxScrollExtent - 10 &&
-        _artListScreenBloc.isNewItemsLoading != true) {
+        _artListScreenBloc.isNewItemsLoading != true &&
+        _artListScreenBloc.noItemsToLoad != true) {
       _artListScreenBloc.isNewItemsLoading = true;
       _artListScreenBloc.add(LoadMoreItems());
     }
@@ -54,13 +55,17 @@ class _ArtListScreenState extends BasePageState<ArtListScreen> {
       bloc: _artListScreenBloc,
       listener: (context, state) {
         if (state is MoreArtListItemsLoading) {
-          _artListScreenBloc.add(StartFetchItems());
+          _artListScreenBloc.add(StartFetchMoreItems());
+        }
+        if (state is ArtListScreenNoItemsToLoadError) {
+          showErrorMessage("There is no item left to show");
+        }
+        if (state is ArtListScreenNetworkError) {
+          showErrorMessage("Could not fetch new items");
         }
       },
       buildWhen: (pre, cur) {
-        return cur is ArtListItemsLoaded ||
-            cur is ArtListScreenNetworkError ||
-            cur is ArtListScreenLoading;
+        return cur is ArtListItemsLoaded || cur is ArtListScreenLoading;
       },
       builder: (context, state) {
         if (state is ArtListItemsLoaded) {
@@ -87,12 +92,20 @@ class _ArtListScreenState extends BasePageState<ArtListScreen> {
                               child: CircularProgressIndicator()));
                     })
               ]));
-        } else if (state is ArtListScreenNetworkError) {
-          return const Text("Error");
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return SmartRefresher(
+              controller: _refreshController,
+              enablePullDown: true,
+              onRefresh: _onRefresh,
+              header: const WaterDropHeader(),
+              child: const Center(child: CircularProgressIndicator()));
         }
       },
     );
+  }
+
+  void _onRefresh() async {
+    _artListScreenBloc.add(LoadArtItems());
+    _refreshController.refreshCompleted();
   }
 }

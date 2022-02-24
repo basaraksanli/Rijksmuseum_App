@@ -35,9 +35,9 @@ class ArtObjectDto {
     principalOrFirstMaker: json["principalOrFirstMaker"] ?? "",
     showImage: json["showImage"] ?? false,
     permitDownload: json["permitDownload"] ?? false,
-    webImage: WebImageDto.fromJson(json["webImage"] ?? {}),
-    headerImage: WebImageDto.fromJson(json["headerImage"] ?? ""),
-    productionPlaces: List<String>.from(json["productionPlaces"].map((x) => x) ?? []),
+    webImage:json["webImage"] != null ? WebImageDto.fromJson(json["webImage"] ?? {}) : null,
+    headerImage: json["headerImage"] != null ? WebImageDto.fromJson(json["headerImage"] ?? "") : null,
+    productionPlaces: json["productionPlaces"] != null ? List<String>.from(json["productionPlaces"].map((x) => x) ?? []) : [],
   );
 
   Map<String, dynamic> toJson() => {
@@ -50,7 +50,7 @@ class ArtObjectDto {
     "permitDownload": permitDownload,
     "webImage": webImage?.toJson(),
     "headerImage": headerImage?.toJson(),
-    "productionPlaces": List<dynamic>.from(productionPlaces!.map((x) => x)),
+    "productionPlaces": productionPlaces != null ? List<dynamic>.from(productionPlaces!.map((x) => x)) : [],
   };
 
   ArtObject toArtObject() => ArtObject(objectNumber!, title ?? "", longTitle ?? "", principalOrFirstMaker ?? "" , productionPlaces ?? []);

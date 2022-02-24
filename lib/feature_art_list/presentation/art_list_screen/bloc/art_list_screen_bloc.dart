@@ -18,13 +18,14 @@ class ArtListScreenBloc extends Bloc<ArtListScreenEvent, ArtListScreenState> {
   final ArtUseCases _artUseCases;
   final List<ArtObject> _artList = [];
   bool isNewItemsLoading = false;
+  bool noItemsToLoad =false;
 
   int page = 1;
 
   ArtListScreenBloc(this._artUseCases) : super(ArtListScreenLoading()) {
     on<LoadArtItems>(_mapLoadArtItems);
     on<LoadMoreItems>((event, emit) => emit(MoreArtListItemsLoading(_artList)),);
-    on<StartFetchItems>(_mapLoadArtItems);
+    on<StartFetchMoreItems>(_mapLoadArtItems);
     add(LoadArtItems());
   }
 
@@ -37,13 +38,18 @@ class ArtListScreenBloc extends Bloc<ArtListScreenEvent, ArtListScreenState> {
 
       if (response is DataSuccess) {
         List<Future> futures = [];
-        response.data!.forEach((element) async {
-          futures.add(updateThumbnails(element));
-        });
-        await Future.wait(futures);
-        isNewItemsLoading = false;
-        page++;
-        emit(ArtListItemsLoaded(_artList));
+        if(response.data!.isNotEmpty) {
+          response.data!.forEach((element) async {
+            futures.add(updateThumbnails(element));
+          });
+          await Future.wait(futures);
+          isNewItemsLoading = false;
+          page++;
+          emit(ArtListItemsLoaded(_artList));
+        } else{
+          noItemsToLoad = true;
+          emit(ArtListScreenNoItemsToLoadError());
+        }
       } else {
         isNewItemsLoading = false;
         emit(ArtListScreenNetworkError());

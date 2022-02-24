@@ -27,14 +27,14 @@ class ImagesDto {
 class LevelDto {
   LevelDto({
     required this.name,
-    required this.width,
-    required this.height,
+    this.width,
+    this.height,
     required this.tiles,
   });
 
   String name;
-  int width;
-  int height;
+  int? width;
+  int? height;
   List<TileDto> tiles;
 
   factory LevelDto.fromJson(Map<String, dynamic> json) => LevelDto(
@@ -54,13 +54,13 @@ class LevelDto {
 
 class TileDto {
   TileDto({
-    required this.x,
-    required this.y,
+    this.x,
+    this.y,
     required this.url,
   });
 
-  int x;
-  int y;
+  int? x;
+  int? y;
   String url;
 
   factory TileDto.fromJson(Map<String, dynamic> json) => TileDto(

@@ -20,7 +20,7 @@ class ArtObjectDetailResultDto {
 
   factory ArtObjectDetailResultDto.fromJson(Map<String, dynamic> json) => ArtObjectDetailResultDto(
     elapsedMilliseconds: json["elapsedMilliseconds"],
-    artObject: ArtObjectDetailDto.fromJson(json["artObject"]),
+    artObject: json["artObject"] != null ?ArtObjectDetailDto.fromJson(json["artObject"]): null,
     artObjectPage: json["artObjectPage"],
   );
 
