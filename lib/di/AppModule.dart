@@ -21,7 +21,7 @@ void setupDi() {
   locator.registerLazySingleton<Dio>(() => Dio());
 
   locator.registerLazySingleton<ArtApi>(() => ArtApi(locator()));
-  locator.registerLazySingleton<ArtRepository>(() => ArtRepositoryImpl());
+  locator.registerLazySingleton<ArtRepository>(() => ArtRepositoryImpl(locator()));
   locator.registerLazySingleton<ArtUseCases>(() =>
       ArtUseCases(GetCollection(locator()), GetThumbnailImage(locator()), GetArtObjectDetail(locator())));
 

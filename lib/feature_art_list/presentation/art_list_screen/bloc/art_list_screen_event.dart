@@ -11,7 +11,7 @@ class LoadMoreItems extends ArtListScreenEvent{
   @override
   List<Object?> get props => [];
 }
-class StartFetchItems extends ArtListScreenEvent{
+class StartFetchMoreItems extends ArtListScreenEvent{
   @override
   List<Object?> get props => [];
 }

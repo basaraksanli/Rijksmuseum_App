@@ -23,12 +23,10 @@ class ArtDetailScreen extends BasePage {
 
 class _ArtDetailState extends BasePageState<ArtDetailScreen> {
   late ArtDetailBloc _artDetailBloc;
-  late ArtUseCases _artUseCases;
 
   @override
   void didChangeDependencies() {
-    _artUseCases = locator.get<ArtUseCases>();
-    _artDetailBloc = ArtDetailBloc(widget._id, _artUseCases);
+    _artDetailBloc = ArtDetailBloc(widget._id, locator());
     super.didChangeDependencies();
   }
 

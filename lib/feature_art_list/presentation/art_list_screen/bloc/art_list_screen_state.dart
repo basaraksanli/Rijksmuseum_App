@@ -30,3 +30,7 @@ class ArtListScreenNetworkError extends ArtListScreenState {
   @override
   List<Object> get props => [];
 }
+class ArtListScreenNoItemsToLoadError extends ArtListScreenState {
+  @override
+  List<Object> get props => [];
+}

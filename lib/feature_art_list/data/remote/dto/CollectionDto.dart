@@ -12,33 +12,33 @@ String collectionDtoToJson(CollectionDto data) => json.encode(data.toJson());
 
 class CollectionDto {
   CollectionDto({
-    required this.elapsedMilliseconds,
-    required this.count,
-    required this.countFacets,
-    required this.artObjects,
-    required this.facets,
+    this.elapsedMilliseconds,
+    this.count,
+    this.countFacets,
+    this.artObjects,
+    this.facets,
   });
 
-  int elapsedMilliseconds;
-  int count;
-  CountFacetsDto countFacets;
-  List<ArtObjectDto> artObjects;
-  List<CollectionDtoFacetDto> facets;
+  int? elapsedMilliseconds;
+  int? count;
+  CountFacetsDto? countFacets;
+  List<ArtObjectDto>? artObjects;
+  List<CollectionDtoFacetDto>? facets;
 
   factory CollectionDto.fromJson(Map<String, dynamic> json) => CollectionDto(
     elapsedMilliseconds: json["elapsedMilliseconds"],
     count: json["count"],
-    countFacets: CountFacetsDto.fromJson(json["countFacets"]),
-    artObjects: List<ArtObjectDto>.from(json["artObjects"].map((x) => ArtObjectDto.fromJson(x))),
-    facets: List<CollectionDtoFacetDto>.from(json["facets"].map((x) => CollectionDtoFacetDto.fromJson(x))),
+    countFacets: json["countFacets"] != null ? CountFacetsDto.fromJson(json["countFacets"]) : null,
+    artObjects: json["artObjects"] != null ? List<ArtObjectDto>.from(json["artObjects"].map((x) => ArtObjectDto.fromJson(x))) : [],
+    facets: json["facets"] != null ? List<CollectionDtoFacetDto>.from(json["facets"].map((x) => CollectionDtoFacetDto.fromJson(x))) : [],
   );
 
   Map<String, dynamic> toJson() => {
     "elapsedMilliseconds": elapsedMilliseconds,
     "count": count,
-    "countFacets": countFacets.toJson(),
-    "artObjects": List<dynamic>.from(artObjects.map((x) => x.toJson())),
-    "facets": List<dynamic>.from(facets.map((x) => x.toJson())),
+    "countFacets": countFacets?.toJson(),
+    "artObjects": artObjects != null ? List<dynamic>.from(artObjects!.map((x) => x.toJson())) : [],
+    "facets": facets != null ? List<dynamic>.from(facets!.map((x) => x.toJson())) : [],
   };
 }
 
@@ -48,8 +48,8 @@ class CountFacetsDto {
     required this.ondisplay,
   });
 
-  int hasimage;
-  int ondisplay;
+  int? hasimage;
+  int? ondisplay;
 
   factory CountFacetsDto.fromJson(Map<String, dynamic> json) => CountFacetsDto(
     hasimage: json["hasimage"],

@@ -1,14 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:rijksmuseum_app/core/presentation/BasePage.dart';
 import 'package:rijksmuseum_app/core/util/constants/localization_constant.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rijksmuseum_app/di/AppModule.dart';
 import 'package:rijksmuseum_app/feature_art_list/presentation/art_list_screen/ArtListScreen.dart';
 
-import '../../../core/config/pref_manager.dart';
 import '../../../core/util/enums/language_enum.dart';
 import 'bloc/language_bloc.dart';
 
@@ -25,8 +23,7 @@ class _MainScreen extends BasePageState<MainScreen> {
 
   @override
   void didChangeDependencies() {
-    var _prefManager = locator.get<BasePref>();
-    _languageBloc = LanguageBloc(_prefManager);
+    _languageBloc = LanguageBloc(locator());
     super.didChangeDependencies();
   }
 
