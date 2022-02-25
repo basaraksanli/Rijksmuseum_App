@@ -4,11 +4,11 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:logger/logger.dart';
 import 'package:rijksmuseum_app/core/config/pref_manager.dart';
-import 'package:rijksmuseum_app/core/params/CollectionRequestParams.dart';
-import 'package:rijksmuseum_app/core/params/ArtObjectRequestParams.dart';
-import 'package:rijksmuseum_app/core/resources/DataState.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/model/ArtObject.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/use_case/ArtUseCases.dart';
+import 'package:rijksmuseum_app/core/params/collection_request_params.dart';
+import 'package:rijksmuseum_app/core/params/art_object_request_params.dart';
+import 'package:rijksmuseum_app/core/resources/data_state.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/use_case/art_use_cases.dart';
 
 part 'art_list_screen_event.dart';
 

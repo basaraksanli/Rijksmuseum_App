@@ -1,5 +1,5 @@
-import '../../../domain/model/ArtObject.dart';
-import 'WebImageDto.dart';
+import '../../../domain/model/art_object.dart';
+import 'web_image_dto.dart';
 
 class ArtObjectDto {
   ArtObjectDto({

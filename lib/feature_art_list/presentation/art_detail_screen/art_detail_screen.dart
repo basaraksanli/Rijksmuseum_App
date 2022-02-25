@@ -3,14 +3,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:rijksmuseum_app/core/presentation/BasePage.dart';
-import 'package:rijksmuseum_app/core/presentation/widgets/CustomImage.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/model/ArtObject.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/use_case/ArtUseCases.dart';
+import 'package:rijksmuseum_app/core/presentation/base_page.dart';
+import 'package:rijksmuseum_app/core/presentation/widgets/custom_image.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/use_case/art_use_cases.dart';
 import 'package:rijksmuseum_app/feature_art_list/presentation/art_detail_screen/bloc/art_detail_bloc.dart';
 
 import '../../../core/util/constants/localization_constant.dart';
-import '../../../di/AppModule.dart';
+import '../../../di/app_module.dart';
 
 class ArtDetailScreen extends BasePage {
   final String _id;

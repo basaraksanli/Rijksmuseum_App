@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'ArtObjectDto.dart';
+import 'art_object_dto.dart';
 
 CollectionDto collectionDtoFromJson(String str) => CollectionDto.fromJson(json.decode(str));
 

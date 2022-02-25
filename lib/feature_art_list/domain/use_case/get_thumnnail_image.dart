@@ -1,8 +1,8 @@
-import 'package:rijksmuseum_app/core/params/ArtObjectRequestParams.dart';
+import 'package:rijksmuseum_app/core/params/art_object_request_params.dart';
 
-import '../../../core/resources/DataState.dart';
+import '../../../core/resources/data_state.dart';
 import '../../../core/use_case/usecase.dart';
-import '../repository/ArtRepository.dart';
+import '../repository/art_repository.dart';
 
 class GetThumbnailImage
     implements UseCase<DataState<String?>, ArtObjectRequestParams> {

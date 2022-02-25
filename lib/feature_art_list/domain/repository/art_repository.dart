@@ -1,8 +1,8 @@
 
 
-import 'package:rijksmuseum_app/feature_art_list/domain/model/ArtObject.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';
 
-import '../../../core/resources/DataState.dart';
+import '../../../core/resources/data_state.dart';
 
 
 abstract class ArtRepository{

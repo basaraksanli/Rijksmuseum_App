@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:rijksmuseum_app/di/AppModule.dart';
-import 'package:rijksmuseum_app/feature_art_list/presentation/main_screen/MainScreen.dart';
+import 'package:rijksmuseum_app/di/app_module.dart';
+import 'package:rijksmuseum_app/feature_art_list/presentation/main_screen/main_screen.dart';
 
 import 'localization.dart';
 

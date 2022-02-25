@@ -1,6 +1,6 @@
-import 'package:rijksmuseum_app/feature_art_list/domain/model/ArtObject.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';
 
-import 'WebImageDto.dart';
+import 'web_image_dto.dart';
 
 class ArtObjectDetailDto {
   ArtObjectDetailDto({

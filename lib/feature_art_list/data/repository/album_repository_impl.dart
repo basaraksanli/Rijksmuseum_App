@@ -4,10 +4,10 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
-import 'package:rijksmuseum_app/core/resources/DataState.dart';
-import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/ImagesDto.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/model/ArtObject.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/repository/ArtRepository.dart';
+import 'package:rijksmuseum_app/core/resources/data_state.dart';
+import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/images_dto.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/repository/art_repository.dart';
 
 import '../remote/art_api.dart';
 

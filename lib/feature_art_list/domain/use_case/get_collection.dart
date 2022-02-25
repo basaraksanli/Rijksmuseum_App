@@ -1,8 +1,8 @@
-import 'package:rijksmuseum_app/core/params/CollectionRequestParams.dart';
-import 'package:rijksmuseum_app/core/resources/DataState.dart';
+import 'package:rijksmuseum_app/core/params/collection_request_params.dart';
+import 'package:rijksmuseum_app/core/resources/data_state.dart';
 import 'package:rijksmuseum_app/core/use_case/usecase.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/model/ArtObject.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/repository/ArtRepository.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/repository/art_repository.dart';
 
 class GetCollection
     implements UseCase<DataState<List<ArtObject>>, CollectionRequestParams> {

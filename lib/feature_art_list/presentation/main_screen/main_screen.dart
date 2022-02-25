@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:rijksmuseum_app/core/presentation/BasePage.dart';
+import 'package:rijksmuseum_app/core/presentation/base_page.dart';
 import 'package:rijksmuseum_app/core/util/constants/localization_constant.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rijksmuseum_app/di/AppModule.dart';
-import 'package:rijksmuseum_app/feature_art_list/presentation/art_list_screen/ArtListScreen.dart';
+import 'package:rijksmuseum_app/di/app_module.dart';
+import 'package:rijksmuseum_app/feature_art_list/presentation/art_list_screen/art_list_screen.dart';
 
 import '../../../core/util/enums/language_enum.dart';
 import 'bloc/language_bloc.dart';

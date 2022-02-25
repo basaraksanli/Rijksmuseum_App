@@ -2,12 +2,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:logger/logger.dart';
-import 'package:rijksmuseum_app/core/params/ArtObjectRequestParams.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/model/ArtObject.dart';
+import 'package:rijksmuseum_app/core/params/art_object_request_params.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';
 
 import '../../../../core/config/pref_manager.dart';
-import '../../../../core/resources/DataState.dart';
-import '../../../domain/use_case/ArtUseCases.dart';
+import '../../../../core/resources/data_state.dart';
+import '../../../domain/use_case/art_use_cases.dart';
 
 part 'art_detail_event.dart';
 

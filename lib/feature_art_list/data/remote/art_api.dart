@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:retrofit/dio.dart';
 import 'package:retrofit/http.dart';
 import 'package:rijksmuseum_app/core/util/constants/constants.dart';
-import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/ArtObjectDetailResultDto.dart';
-import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/CollectionDto.dart';
-import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/ImagesDto.dart';
+import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/art_object_detail_result_dto.dart';
+import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/collection_dto.dart';
+import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/images_dto.dart';
 
 part 'art_api.g.dart';
 

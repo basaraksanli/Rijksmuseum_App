@@ -2,9 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rijksmuseum_app/core/presentation/widgets/CustomImage.dart';
-import 'package:rijksmuseum_app/feature_art_list/domain/model/ArtObject.dart';
-import 'package:rijksmuseum_app/feature_art_list/presentation/art_detail_screen/ArtDetailScreen.dart';
+import 'package:rijksmuseum_app/core/presentation/widgets/custom_image.dart';
+import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';
+import 'package:rijksmuseum_app/feature_art_list/presentation/art_detail_screen/art_detail_screen.dart';
 import 'package:rijksmuseum_app/feature_art_list/util/art_list_sizes.dart';
 
 import '../../../../core/util/constants/localization_constant.dart';

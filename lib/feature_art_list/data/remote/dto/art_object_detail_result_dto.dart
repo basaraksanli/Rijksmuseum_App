@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 
-import 'ArtObjectDetailDto.dart';
+import 'art_object_detail_dto.dart';
 
 ArtObjectDetailResultDto artObjectDetailResultDtoFromJson(String str) => ArtObjectDetailResultDto.fromJson(json.decode(str));
 

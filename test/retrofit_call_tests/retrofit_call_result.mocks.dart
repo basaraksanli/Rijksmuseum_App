@@ -8,9 +8,9 @@ import 'package:mockito/mockito.dart' as _i1;
 import 'package:retrofit/dio.dart' as _i2;
 import 'package:rijksmuseum_app/feature_art_list/data/remote/art_api.dart'
     as _i3;
-import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/ArtObjectDetailResultDto.dart'
+import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/art_object_detail_result_dto.dart'
     as _i6;
-import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/CollectionDto.dart'
+import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/collection_dto.dart'
     as _i5;
 
 // ignore_for_file: type=lint
