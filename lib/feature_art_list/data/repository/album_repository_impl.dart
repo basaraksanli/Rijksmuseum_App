@@ -3,7 +3,6 @@ import 'dart:io';
 
 
 import 'package:dio/dio.dart';
-import 'package:logger/logger.dart';
 import 'package:rijksmuseum_app/core/resources/data_state.dart';
 import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/images_dto.dart';
 import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';

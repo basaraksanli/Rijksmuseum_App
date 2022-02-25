@@ -7,7 +7,7 @@ import 'package:rijksmuseum_app/di/app_module.dart';
 import 'package:rijksmuseum_app/feature_art_list/domain/model/art_object.dart';
 import 'package:rijksmuseum_app/feature_art_list/domain/use_case/art_use_cases.dart';
 
-import '../TestResultConstants.dart';
+import '../test_mocks_constants.dart';
 
 void main(){
   setUpAll((){
@@ -37,7 +37,7 @@ void main(){
     test("Get Thumbnail image test, returns an exact URL", () async {
       ArtUseCases artUseCases = locator();
       var result =await artUseCases.getThumbnailImage(params: const ArtObjectRequestParams("SK-C-5","en"));
-      expect(result.data, TestResultConstants.getThumbnailResultRealExample);
+      expect(result.data, TestMocksConstants.getThumbnailResultRealExample);
     });
     test("Get Art Object Detail test when there is no object, returns Dio error", () async {
       ArtUseCases artUseCases = locator();

@@ -15,7 +15,7 @@ import 'package:rijksmuseum_app/feature_art_list/domain/use_case/get_collection.
 import 'package:rijksmuseum_app/feature_art_list/domain/use_case/get_thumnnail_image.dart';
 import 'package:rijksmuseum_app/feature_art_list/presentation/art_list_screen/bloc/art_list_screen_bloc.dart';
 
-import '../TestResultConstants.dart';
+import '../test_mocks_constants.dart';
 import 'art_list_bloc_test.mocks.dart';
 
 @GenerateMocks([ArtApi])
@@ -39,24 +39,24 @@ void main() {
       when(api.getCollection(page: 1, language: "nl")).thenAnswer((_) async {
         await Future.delayed(const Duration(seconds: 1));
         return HttpResponse(
-            CollectionDto.fromJson(TestResultConstants.exampleCollectionResult),
+            CollectionDto.fromJson(TestMocksConstants.exampleCollectionResult),
             Response(
                 statusCode: 200, requestOptions: RequestOptions(path: "")));
       });
       when(api.getImage(id: "SK-A-2815", language: "en")).thenAnswer(
           (_) async => HttpResponse(
-              TestResultConstants.getImageCallResultEmpty,
+              TestMocksConstants.getImageCallResultEmpty,
               Response(
                   statusCode: 200, requestOptions: RequestOptions(path: ""))));
       when(api.getImage(id: "SK-A-3059", language: "en")).thenAnswer((_) async {
         return HttpResponse(
-            TestResultConstants.getImageCallResultEmpty,
+            TestMocksConstants.getImageCallResultEmpty,
             Response(
                 statusCode: 200, requestOptions: RequestOptions(path: "")));
       });
       when(api.getImage(id: "SK-A-3148", language: "en")).thenAnswer(
           (_) async => HttpResponse(
-              TestResultConstants.getImageCallResultEmpty,
+              TestMocksConstants.getImageCallResultEmpty,
               Response(
                   statusCode: 200, requestOptions: RequestOptions(path: ""))));
       artListScreenBloc = ArtListScreenBloc(locator());
@@ -80,24 +80,24 @@ void main() {
       when(api.getCollection(page: 1, language: "nl")).thenAnswer((_) async {
         await Future.delayed(const Duration(seconds: 1));
         return HttpResponse(
-            CollectionDto.fromJson(TestResultConstants.exampleCollectionResult),
+            CollectionDto.fromJson(TestMocksConstants.exampleCollectionResult),
             Response(
                 statusCode: 200, requestOptions: RequestOptions(path: "")));
       });
       when(api.getImage(id: "SK-A-2815", language: "en")).thenAnswer(
           (_) async => HttpResponse(
-              TestResultConstants.getImageCallResultEmpty,
+              TestMocksConstants.getImageCallResultEmpty,
               Response(
                   statusCode: 200, requestOptions: RequestOptions(path: ""))));
       when(api.getImage(id: "SK-A-3059", language: "en")).thenAnswer((_) async {
         return HttpResponse(
-            TestResultConstants.getImageCallResultEmpty,
+            TestMocksConstants.getImageCallResultEmpty,
             Response(
                 statusCode: 200, requestOptions: RequestOptions(path: "")));
       });
       when(api.getImage(id: "SK-A-3148", language: "en")).thenAnswer(
           (_) async => HttpResponse(
-              TestResultConstants.getImageCallResultEmpty,
+              TestMocksConstants.getImageCallResultEmpty,
               Response(
                   statusCode: 200, requestOptions: RequestOptions(path: ""))));
       when(api.getCollection(page: 2, language: "nl")).thenAnswer((_) async {
@@ -119,24 +119,24 @@ void main() {
           when(api.getCollection(page: 1, language: "nl")).thenAnswer((_) async {
             await Future.delayed(const Duration(seconds: 1));
             return HttpResponse(
-                CollectionDto.fromJson(TestResultConstants.exampleCollectionResult),
+                CollectionDto.fromJson(TestMocksConstants.exampleCollectionResult),
                 Response(
                     statusCode: 200, requestOptions: RequestOptions(path: "")));
           });
           when(api.getImage(id: "SK-A-2815", language: "en")).thenAnswer(
                   (_) async => HttpResponse(
-                  TestResultConstants.getImageCallResultEmpty,
+                  TestMocksConstants.getImageCallResultEmpty,
                   Response(
                       statusCode: 200, requestOptions: RequestOptions(path: ""))));
           when(api.getImage(id: "SK-A-3059", language: "en")).thenAnswer((_) async {
             return HttpResponse(
-                TestResultConstants.getImageCallResultEmpty,
+                TestMocksConstants.getImageCallResultEmpty,
                 Response(
                     statusCode: 200, requestOptions: RequestOptions(path: "")));
           });
           when(api.getImage(id: "SK-A-3148", language: "en")).thenAnswer(
                   (_) async => HttpResponse(
-                  TestResultConstants.getImageCallResultEmpty,
+                  TestMocksConstants.getImageCallResultEmpty,
                   Response(
                       statusCode: 200, requestOptions: RequestOptions(path: ""))));
           when(api.getCollection(page: 2, language: "nl")).thenAnswer((_) async {

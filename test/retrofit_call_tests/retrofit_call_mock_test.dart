@@ -6,7 +6,7 @@ import 'package:mockito/mockito.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:rijksmuseum_app/core/params/art_object_request_params.dart';
 import 'package:rijksmuseum_app/core/params/collection_request_params.dart';
-import 'package:rijksmuseum_app/core/resources/DataState.dart';
+import 'package:rijksmuseum_app/core/resources/data_state.dart';
 import 'package:rijksmuseum_app/di/app_module.dart';
 import 'package:rijksmuseum_app/feature_art_list/data/remote/art_api.dart';
 import 'package:rijksmuseum_app/feature_art_list/data/remote/dto/art_object_detail_result_dto.dart';
@@ -21,7 +21,7 @@ import 'package:rijksmuseum_app/feature_art_list/domain/use_case/get_thumnnail_i
 
 
 
-import '../TestResultConstants.dart';
+import '../test_mocks_constants.dart';
 import 'retrofit_call_result.mocks.dart';
 
 @GenerateMocks([ArtApi])
@@ -41,7 +41,7 @@ void main() {
     test('returns z6.url if the call completes successfully', () async {
       when(api.getImage(id: "", language: "en")).thenAnswer((_) async =>
           HttpResponse(
-              TestResultConstants.getImageCallResultZ6,
+              TestMocksConstants.getImageCallResultZ6,
               Response(
                   statusCode: 200, requestOptions: RequestOptions(path: ""))));
       ArtUseCases artUseCases = locator();
@@ -53,7 +53,7 @@ void main() {
     test('returns z3.url if the call completes successfully', () async {
       when(api.getImage(id: "", language: "en")).thenAnswer((_) async =>
           HttpResponse(
-              TestResultConstants.getImageCallResultZ3,
+              TestMocksConstants.getImageCallResultZ3,
               Response(
                   statusCode: 200, requestOptions: RequestOptions(path: ""))));
       ArtUseCases artUseCases = locator();
@@ -66,7 +66,7 @@ void main() {
         () async {
       when(api.getImage(id: "", language: "en")).thenAnswer((_) async =>
           HttpResponse(
-              TestResultConstants.getImageCallResultEmpty,
+              TestMocksConstants.getImageCallResultEmpty,
               Response(
                   statusCode: 200, requestOptions: RequestOptions(path: ""))));
       ArtUseCases artUseCases = locator();
@@ -82,7 +82,7 @@ void main() {
       when(api.getCollection(page: 1, language: "en")).thenAnswer((_) async =>
           HttpResponse(
               CollectionDto.fromJson(
-                  TestResultConstants.exampleCollectionResult),
+                  TestMocksConstants.exampleCollectionResult),
               Response(
                   statusCode: 200, requestOptions: RequestOptions(path: ""))));
       ArtUseCases artUseCases = locator();
@@ -109,7 +109,7 @@ void main() {
           when(api.getArtObjectDetail(id: "", language: "en")).thenAnswer((_) async =>
               HttpResponse(
                   ArtObjectDetailResultDto.fromJson(
-                      TestResultConstants.exampleArtObjectDetailResult),
+                      TestMocksConstants.exampleArtObjectDetailResult),
                   Response(
                       statusCode: 200, requestOptions: RequestOptions(path: ""))));
           ArtUseCases artUseCases = locator();

@@ -1,4 +1,4 @@
-class TestResultConstants {
+class TestMocksConstants {
   static const String getImageCallResultZ6 = '''{
   "levels": [
     {
