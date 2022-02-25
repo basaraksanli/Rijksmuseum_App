@@ -12,6 +12,8 @@
   "no_location_indicated": "Er is geen locatie aangegeven",
 
   "description" : "Beschrijving",
+  "no_description_available": "Geen beschrijving beschikbaar",
 
-  "no_description_available": "Geen beschrijving beschikbaar"
+  "there_is_no_item_left_to_show" : "Er is geen item meer om te laten zien",
+  "could_not_fetch_new_items": "Kan geen nieuwe items ophalen"
 }
