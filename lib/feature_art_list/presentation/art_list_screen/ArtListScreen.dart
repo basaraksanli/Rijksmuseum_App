@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -5,6 +6,7 @@ import 'package:rijksmuseum_app/core/presentation/BasePage.dart';
 import 'package:rijksmuseum_app/feature_art_list/presentation/art_list_screen/bloc/art_list_screen_bloc.dart';
 import 'package:rijksmuseum_app/feature_art_list/presentation/art_list_screen/widgets/art_list_item.dart';
 
+import '../../../core/util/constants/localization_constant.dart';
 import '../../../di/AppModule.dart';
 
 class ArtListScreen extends BasePage {
@@ -58,10 +60,10 @@ class _ArtListScreenState extends BasePageState<ArtListScreen> {
           _artListScreenBloc.add(StartFetchMoreItems());
         }
         if (state is ArtListScreenNoItemsToLoadError) {
-          showErrorMessage("There is no item left to show");
+          showErrorMessage(LC.thereIsNoItemLeftToShow.tr());
         }
         if (state is ArtListScreenNetworkError) {
-          showErrorMessage("Could not fetch new items");
+          showErrorMessage(LC.couldNotFetchNewItems.tr());
         }
       },
       buildWhen: (pre, cur) {

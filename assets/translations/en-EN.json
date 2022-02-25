@@ -12,5 +12,8 @@
   "no_location_indicated": "No location is indicated",
 
   "description" : "Description",
-  "no_description_available" : "No Description available"
+  "no_description_available" : "No Description available",
+
+  "there_is_no_item_left_to_show" : "There is no item left to show",
+  "could_not_fetch_new_items" : "Could not fetch new items"
 }

@@ -14,4 +14,7 @@ class LC{
   static const description = "description";
 
   static const noDescriptionAvailable = "no_description_available";
+
+  static const thereIsNoItemLeftToShow = "there_is_no_item_left_to_show";
+  static const couldNotFetchNewItems = "could_not_fetch_new_items";
 }
